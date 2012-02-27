@@ -54,6 +54,8 @@ module Tire
         end
 
         def self.get_header
+          Rails.logger.debug { " get header "} 
+          Rails.logger.debug { { 'TOKEN' => Tire::Configuration.token } } 
           { 'TOKEN' => Tire::Configuration.token } 
         end 
 
