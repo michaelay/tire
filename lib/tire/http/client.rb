@@ -16,7 +16,7 @@ module Tire
         end
 
         def self.post(url, data)
-          perform ::RestClient.post(url, data, self,get_header)
+          perform ::RestClient.post(url, data, self.get_header)
         rescue *ConnectionExceptions
           raise
         rescue ::RestClient::Exception => e
@@ -24,7 +24,7 @@ module Tire
         end
 
         def self.put(url, data)
-          perform ::RestClient.put(url, data, self,get_header)
+          perform ::RestClient.put(url, data, self.get_header)
         rescue *ConnectionExceptions
           raise
         rescue ::RestClient::Exception => e
@@ -32,7 +32,7 @@ module Tire
         end
 
         def self.delete(url)
-          perform ::RestClient.delete(url, self,get_header)
+          perform ::RestClient.delete(url, self.get_header)
         rescue *ConnectionExceptions
           raise
         rescue ::RestClient::Exception => e
@@ -40,7 +40,7 @@ module Tire
         end
 
         def self.head(url)
-          perform ::RestClient.head(url, self,get_header)
+          perform ::RestClient.head(url, self.get_header)
         rescue *ConnectionExceptions
           raise
         rescue ::RestClient::Exception => e
