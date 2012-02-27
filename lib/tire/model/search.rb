@@ -140,6 +140,10 @@ module Tire
               self
             end
           end
+        rescue MultiJson::DecodeError 
+          Rails.logger.debug { "MultiJson::DecodeError" } 
+        ensure 
+          self
         end
         alias :update_elasticsearch_index  :update_index
         alias :update_elastic_search_index :update_index
