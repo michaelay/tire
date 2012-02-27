@@ -141,7 +141,7 @@ module Tire
             end
           end
         rescue MultiJson::DecodeError 
-          Rails.logger.debug { "MultiJson::DecodeError" } 
+          Rails.logger.fatal { "MultiJson::DecodeError" } 
         ensure 
           self
         end
